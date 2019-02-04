@@ -1,0 +1,73 @@
+
+      <head>
+        <title>trello Reports</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          table {
+              border-width:1px; 
+              border-style:solid; 
+              border-color:black;
+              border-collapse:collapse;
+          }
+          td { 
+              border-width:1px;
+              border-style:solid; 
+              border-color:black;
+          }
+          th { 
+              border-width:1px;
+              border-style:solid; 
+              border-color:black;
+          }
+        </style>
+    
+      </head>
+      <body>
+        <div class="container"> 
+            <h1>liste des cartes en retard</h1>
+             <table>
+                <tr>
+                    <th>tache</th>
+                    <th>date</th>
+                    <th>description</th>
+                    <th>liste</th>
+                </tr>
+                {% for card in data['delayed_cards'] %}
+                <tr>
+                    <td>{{card.name}}</td>
+                    <td>{{card.due}}</td>
+                    <td>{{card.desc}}</td>
+                    <td>{{card.get_list().name}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h1>liste des cartes de la semaine</h1>
+             <table>
+                <tr>
+                    <th>tache</th>
+                    <th>date</th>
+                    <th>description</th>
+                    <th>liste</th>
+                </tr>
+                {% for card in data['week_cards'] %}
+                <tr>
+                    <td>{{card.name}}</td>
+                    <td>{{card.due}}</td>
+                    <td>{{card.desc}}</td>
+                    <td>{{card.get_list().name}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+      </body>
+    </html>
+    
+
+
+
+
+
+
+
