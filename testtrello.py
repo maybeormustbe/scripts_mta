@@ -5,7 +5,7 @@ import dateutil.parser
 
 
 def interpretDatetime(strdate) :
-    # transform format 2018-11-29T08:54:16.000Z in datetime
+    # transform format 2018-11-29T08:54:16.000Z in datetime again
     return dateutil.parser.parse(strdate).replace(tzinfo=None)
 
 def mainfunction(apis, logger, previous) :
@@ -28,6 +28,7 @@ def mainfunction(apis, logger, previous) :
     
     actions = board.fetch_actions('updateCard', action_limit=200)
     return {'delayed_cards':cards_delayed, 'week_cards':cards_week, 'actions':actions}
+
 
 
 
