@@ -53,7 +53,7 @@ def make_alerts():
 	value = [(time.strftime('%A<br>%d %B', time.strptime(a[0], '%Y%m%d')), a[1]) for a in value]
 	return value
 	# value = sorted([item for sublist in value for item in sublist], key=lambda x : x['dateKey'])
-    # i do it to test push
+    # i do it to test push - and from remote
 
 
 
